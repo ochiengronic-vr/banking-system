@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>ROCKY ONLINE BANK</title>
 
 <style>
@@ -16,7 +17,7 @@ body{
     min-height:100vh;
     background:
     linear-gradient(rgba(0,0,40,.7),rgba(0,0,40,.7)),
-    url("your-background.jpg");
+    url("background.jpg");
     background-size:cover;
     background-position:center;
     color:white;
@@ -33,12 +34,13 @@ body{
 }
 
 
-/* LOGIN */
+/* LOGIN + DASHBOARD */
 
 .login-box,
 .dashboard{
 
-    width:380px;
+    width:90%;
+    max-width:380px;
     margin:40px auto;
     padding:30px;
     background:rgba(255,255,255,.15);
@@ -67,6 +69,8 @@ input{
 }
 
 
+/* BUTTONS */
+
 button{
 
     width:100%;
@@ -77,8 +81,26 @@ button{
     background:#00e676;
     color:black;
     font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 
 }
+
+
+button:hover{
+
+    background:#00bfa5;
+    color:white;
+
+}
+
+
+button:active{
+
+    background:red;
+
+}
+
 
 
 .card{
@@ -108,13 +130,8 @@ a{
 .menu{
     margin-top:20px;
 }
-button:hover{
-            background-color: rgb(53, 29, 190);
-            color: rgb(176, 16, 133);
-        }
-         button:active{
-            background-color: red;
-        }
+
+
 </style>
 
 </head>
@@ -145,17 +162,25 @@ button:hover{
 <input type="password" placeholder="Password">
 
 
-<button class="button">
+<button>
 Sign In
 </button>
 
-<br>
-<br>
 
-<p>help click >>><a href="https://ochiengronic-vr.github.io/.github.io/">
+<br><br>
+
+
+<p>
+Help click >>>
+<a href="https://ochiengronic-vr.github.io/.github.io/" target="_blank">
 @ ROCKY
-</a></p>
-<p>open account and withraw</p>
+</a>
+</p>
+
+
+<p>
+Open account and withdraw
+</p>
 
 
 </div>
@@ -182,7 +207,7 @@ Account Balance
 
 
 <div class="balance">
-Ksh75,000
+Ksh 75,000
 </div>
 
 
@@ -213,6 +238,17 @@ Ksh75,000
 
 </div>
 
+
+
+<script>
+
+document.querySelector("button").onclick=function(){
+
+alert("Login clicked");
+
+}
+
+</script>
 
 
 </body>
