@@ -1,159 +1,289 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ROCKY ONLINE BANK</title>
+<title>ROCKY ONLINE BANK</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #362782;
-        }
+<style>
 
-        .header {
-            background: #003366;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .login-box, .dashboard {
-            width: 360px;
-            margin: 50px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,40,.7),rgba(0,0,40,.7)),
+    url("your-background.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
 
-        input {
-            width: 90%;
-            padding: 12px;
-            margin: 10px 0;
-            align-items: center;
-        }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #003366;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+/* HEADER */
 
-        button:hover {
-            background: #15e364;
-        }
+.header{
+    background:rgba(0,51,102,.9);
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px black;
+}
 
-        .dashboard {
-            display: none;
-        }
 
-        .card {
-            background: #003366;
-            color: rgb(34, 159, 136);
-            padding: 20px;
-            border-radius: 10px;
-        }
+/* LOGIN */
 
-        .menu button {
-            margin-top: 10px;
-        }
-    </style>
+.login-box,
+.dashboard{
+
+    width:380px;
+    margin:60px auto;
+    padding:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    box-shadow:0 0 25px black;
+
+}
+
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+
+input{
+
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:none;
+    border-radius:8px;
+    outline:none;
+
+}
+
+
+button{
+
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    border:none;
+    border-radius:8px;
+    background:#00e676;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    background:#00bfa5;
+    transform:scale(1.05);
+
+}
+
+
+/* DASHBOARD */
+
+
+.dashboard{
+
+    display:none;
+
+}
+
+
+.card{
+
+    background:linear-gradient(135deg,#003366,#00bfa5);
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+
+}
+
+
+.balance{
+
+    font-size:40px;
+    margin-top:10px;
+
+}
+
+
+.menu{
+
+    margin-top:20px;
+
+}
+
+
+a{
+
+color:#00e676;
+text-decoration:none;
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <div class="header">
-    <h1>🏦 ROCKY ONLINE BANK</h1>
-    <p>Secure Online Banking</p>
+
+<h1>🏦 ROCKY ONLINE BANK</h1>
+
+<p>Secure Digital Banking System</p>
+
 </div>
+
 
 
 <div class="login-box" id="login">
 
-    <h2>Login</h2>
 
-    <input type="text" id="username" placeholder="Username">
+<h2>🔐 Login</h2>
 
-    <input type="password" id="password" placeholder="Password">
 
-    <button onclick="login()">Sign In</button>
+<input id="username" placeholder="Username">
 
-    <p id="message"></p>
-    <a href="https://ochiengronic-vr.github.io/.github.io/">@ ROCKY</a>
+
+<input id="password" type="password" placeholder="Password">
+
+
+<button onclick="login()">Sign In</button>
+
+
+<p id="message"></p>
+
+
+<br>
+
+<a href="https://ochiengronic-vr.github.io/.github.io/">
+@ ROCKY
+</a>
+
 
 </div>
+
 
 
 
 <div class="dashboard" id="dashboard">
 
-    <h2>Welcome to ROCKY BANK</h2>
 
-    <div class="card">
-
-        <h3>Account Balance</h3>
-
-        <h1>$5,000</h1>
-
-    </div>
+<h2>Welcome ROCKY 👋</h2>
 
 
-    <div class="menu">
+<div class="card">
 
-        <button onclick="deposit()">Deposit Money</button>
 
-        <button onclick="withdraw()">Withdraw Money</button>
+<h3>Account Balance</h3>
 
-        <button onclick="logout()">Logout</button>
 
-    </div>
+<div class="balance">
+$5,000
+</div>
 
 
 </div>
 
+
+
+<div class="menu">
+
+
+<button onclick="deposit()">
+💰 Deposit Money
+</button>
+
+
+<button onclick="withdraw()">
+💳 Withdraw Money
+</button>
+
+
+<button onclick="logout()">
+🚪 Logout
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
 <script>
+
 
 function login(){
 
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
+
+let user=document.getElementById("username").value;
+
+let pass=document.getElementById("password").value;
 
 
-    if(user=="rocky" && pass=="1234"){
 
-        document.getElementById("login").style.display="none";
-        document.getElementById("dashboard").style.display="block";
+if(user=="rocky" && pass=="1234"){
 
-    }else{
 
-        document.getElementById("message").innerHTML =
-        "Wrong username or password";
+document.getElementById("login").style.display="none";
 
-    }
+document.getElementById("dashboard").style.display="block";
+
 
 }
+
+else{
+
+
+document.getElementById("message").innerHTML=
+"❌ Wrong username or password";
+
+
+}
+
+
+}
+
+
 
 
 function deposit(){
 
-    alert("Deposit feature coming soon");
+alert("Deposit feature coming soon 💰");
 
 }
+
 
 
 function withdraw(){
 
-    alert("Withdraw feature coming soon");
+alert("Withdraw feature coming soon 💳");
 
 }
 
 
+
 function logout(){
 
-    location.reload();
+location.reload();
 
 }
 
