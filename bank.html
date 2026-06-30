@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROCKY ONLINE BANK</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #362782;
+        }
+
+        .header {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-box, .dashboard {
+            width: 360px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            align-items: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #15e364;
+        }
+
+        .dashboard {
+            display: none;
+        }
+
+        .card {
+            background: #003366;
+            color: rgb(34, 159, 136);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .menu button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🏦 ROCKY ONLINE BANK</h1>
+    <p>Secure Online Banking</p>
+</div>
+
+
+<div class="login-box" id="login">
+
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Sign In</button>
+
+    <p id="message"></p>
+    <a href="https://ochiengronic-vr.github.io/.github.io/">@ ROCKY</a>
+
+</div>
+
+
+
+<div class="dashboard" id="dashboard">
+
+    <h2>Welcome to ROCKY BANK</h2>
+
+    <div class="card">
+
+        <h3>Account Balance</h3>
+
+        <h1>$5,000</h1>
+
+    </div>
+
+
+    <div class="menu">
+
+        <button onclick="deposit()">Deposit Money</button>
+
+        <button onclick="withdraw()">Withdraw Money</button>
+
+        <button onclick="logout()">Logout</button>
+
+    </div>
+
+
+</div>
+
+<script>
+
+function login(){
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+
+    if(user=="rocky" && pass=="1234"){
+
+        document.getElementById("login").style.display="none";
+        document.getElementById("dashboard").style.display="block";
+
+    }else{
+
+        document.getElementById("message").innerHTML =
+        "Wrong username or password";
+
+    }
+
+}
+
+
+function deposit(){
+
+    alert("Deposit feature coming soon");
+
+}
+
+
+function withdraw(){
+
+    alert("Withdraw feature coming soon");
+
+}
+
+
+function logout(){
+
+    location.reload();
+
+}
+
+
+</script>
+
+
+</body>
+</html>
