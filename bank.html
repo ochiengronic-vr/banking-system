@@ -39,7 +39,7 @@ body{
 .dashboard{
 
     width:380px;
-    margin:60px auto;
+    margin:40px auto;
     padding:30px;
     background:rgba(255,255,255,.15);
     backdrop-filter:blur(10px);
@@ -77,26 +77,6 @@ button{
     background:#00e676;
     color:black;
     font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-
-}
-
-
-button:hover{
-
-    background:#00bfa5;
-    transform:scale(1.05);
-
-}
-
-
-/* DASHBOARD */
-
-
-.dashboard{
-
-    display:none;
 
 }
 
@@ -119,20 +99,22 @@ button:hover{
 }
 
 
-.menu{
-
-    margin-top:20px;
-
-}
-
-
 a{
-
-color:#00e676;
-text-decoration:none;
-
+    color:#00e676;
+    text-decoration:none;
 }
 
+
+.menu{
+    margin-top:20px;
+}
+button:hover{
+            background-color: rgb(53, 29, 190);
+            color: rgb(176, 16, 133);
+        }
+         button:active{
+            background-color: red;
+        }
 </style>
 
 </head>
@@ -151,29 +133,29 @@ text-decoration:none;
 
 
 
-<div class="login-box" id="login">
+<div class="login-box">
 
 
 <h2>🔐 Login</h2>
 
 
-<input id="username" placeholder="Username">
+<input placeholder="Username">
 
 
-<input id="password" type="password" placeholder="Password">
+<input type="password" placeholder="Password">
 
 
-<button onclick="login()">Sign In</button>
-
-
-<p id="message"></p>
-
+<button class="button">
+Sign In
+</button>
 
 <br>
+<br>
 
-<a href="https://ochiengronic-vr.github.io/.github.io/">
+<p>help click >>><a href="https://ochiengronic-vr.github.io/.github.io/">
 @ ROCKY
-</a>
+</a></p>
+<p>open account and withraw</p>
 
 
 </div>
@@ -181,20 +163,26 @@ text-decoration:none;
 
 
 
-<div class="dashboard" id="dashboard">
+
+<div class="dashboard">
 
 
-<h2>Welcome ROCKY 👋</h2>
+<h2>
+Welcome ROCKY 👋
+</h2>
+
 
 
 <div class="card">
 
 
-<h3>Account Balance</h3>
+<h3>
+Account Balance
+</h3>
 
 
 <div class="balance">
-$5,000
+Ksh75,000
 </div>
 
 
@@ -205,17 +193,17 @@ $5,000
 <div class="menu">
 
 
-<button onclick="deposit()">
+<button>
 💰 Deposit Money
 </button>
 
 
-<button onclick="withdraw()">
+<button>
 💳 Withdraw Money
 </button>
 
 
-<button onclick="logout()">
+<button>
 🚪 Logout
 </button>
 
@@ -227,69 +215,6 @@ $5,000
 
 
 
-
-<script>
-
-
-function login(){
-
-
-let user=document.getElementById("username").value;
-
-let pass=document.getElementById("password").value;
-
-
-
-if(user=="rocky" && pass=="1234"){
-
-
-document.getElementById("login").style.display="none";
-
-document.getElementById("dashboard").style.display="block";
-
-
-}
-
-else{
-
-
-document.getElementById("message").innerHTML=
-"❌ Wrong username or password";
-
-
-}
-
-
-}
-
-
-
-
-function deposit(){
-
-alert("Deposit feature coming soon 💰");
-
-}
-
-
-
-function withdraw(){
-
-alert("Withdraw feature coming soon 💳");
-
-}
-
-
-
-function logout(){
-
-location.reload();
-
-}
-
-
-</script>
-
-
 </body>
 </html>
+
